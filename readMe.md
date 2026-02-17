@@ -21,19 +21,6 @@ Failure to follow these rules may result in incorrect calculations.
 
 ---
 
-YOUR BRANCH
-
-Each worker has a dedicated branch:
-
-You → branch name: you
-Alex → branch name: alex
-Joshua → branch name: joshua
-Eska → branch name: eska
-
-Always double-check that you are on your own branch before uploading.
-
----
-
 WHERE TO UPLOAD FILES
 
 Upload your JSON file inside the following folder:
