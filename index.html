@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Worker Dashboard</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>Worker Dashboard</h1>
+    <p>Pay: <b>$100 per 1% performance</b> • Company Expenses: $62.5 / week</p>
+    <button id="themeToggle" class="secondary theme-toggle">
+      🌙 Dark
+    </button>
+  </header>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tabBtn tab-button active" data-tab="uploadTab">Upload JSONs</button>
+    <button class="tabBtn tab-button" data-tab="calcTab">Calculation</button>
+    <button class="tabBtn tab-button" data-tab="chartTab">Chart</button>
+  </div>
+
+  <!-- ================= Upload JSONs ================= -->
+  <div id="uploadTab" class="tab panel active">
+
+    <div class="actions">
+      <button class="primary" id="uploadJSON">📂 Upload JSON Files</button>
+      <input type="file" id="fileInput" multiple hidden>
+    </div>
+
+    <div class="table-wrapper">
+      <table id="resultTable" style="display:none;">
+        <thead>
+          <tr>
+            <th>Worker</th>
+            <th>Total Performance (%)</th>
+            <th>Total Pay ($)</th>
+            <th>Share %</th>
+          </tr>
+        </thead>
+        <tbody id="resultBody"></tbody>
+        <tfoot>
+          <tr>
+            <td><b>Total Team</b></td>
+            <td id="teamPerf">0%</td>
+            <td id="teamPay">$0</td>
+            <td>100%</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- ================= Calculation ================= -->
+  <div id="calcTab" class="tab panel">
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Worker</th>
+            <th>Weekly Performance (%)</th>
+            <th>Weekly Pay ($)</th>
+            <th>Total Performance (%)</th>
+            <th>Share %</th>
+          </tr>
+        </thead>
+        <tbody id="calcBody"></tbody>
+        <tfoot>
+          <tr>
+            <td><b>Total Team Performance</b></td>
+            <td colspan="4" id="weeklyPerf">0%</td>
+          </tr>
+          <tr>
+            <td><b>Total Weekly Payroll</b></td>
+            <td colspan="4" id="weeklyPay">$0</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="actions">
+      <button class="success" id="downloadJSON">💾 Download Weekly JSON</button>
+    </div>
+
+  </div>
+
+  <!-- ================= Chart ================= -->
+  <div id="chartTab" class="tab panel">
+    <div class="chart-container">
+      <canvas id="performanceChart"></canvas>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
